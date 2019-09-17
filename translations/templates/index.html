@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Калькулятор для перевода арабских чисел в римские и наоборот</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="shortcut icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+
+<body>
+    <div class="container justify-content-center">
+        <p id="entrance">
+            <b>Перевод арабских чисел в римские и наоборот</b><br>
+            Иногда возникает потребность подсчета десятичных чисел в римские числа и наоборот. Именно для простого
+            решения данной проблемы и создан онлайн калькулятор, который конвертирует десятичные числа в римские и
+            обратно. В специальную ячейку, Вы сможете ввести значение десятичное числа и, нажав кнопку “перевести”, Вы
+            получите римское число справа.
+            Этот калькулятор может послужить очень хорошую службу, если вам вдруг понадобилось узнать, как обозначить,
+            то или иное число римским символом, это Вы сможете сделать за считанные секунды.
+            Лишь воспользуйтесь данным калькулятором.
+        </p>
+        <div class="form-group row">
+            <div class="form-group col-md-5">
+                <textarea id="number" class="form-control" rows="2"
+                    placeholder="Введите число для конвертации"></textarea>
+            </div>
+            <div id="button_container" class="form-group  col-md-2">
+                <button class="form-control btn btn-primary align-middle" id="submit">Перевести</button>
+            </div>
+            <div class="form-group col-md-5">
+                <textarea readonly class="form-control" id="result" rows="2" placeholder="Ваш результат"></textarea>
+            </div>
+        </div>
+        <div id="error_row" class="form-group row">
+            <div class="form-group col-md-5">
+                <div class="invalid-feedback number"></div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <script type="application/javascript"
+            src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="{% static 'js/index.js' %}"></script>
+    </footer>
+</body>
+
+</html>
